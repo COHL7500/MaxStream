@@ -1,19 +1,19 @@
 package project_code;
+import java.util.*;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+public class ProfileController
+{
+    public ArrayList profiles;
 
-public class ProfileController {
-    @FXML
-    private Label welcomeText;
-    @FXML
-    private Label welcomeText2;
+    public void OnStart()
+    {
+        profiles = new ArrayList();
 
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
     }
 
-    @FXML
-    protected void onAnotherButtonClick() {welcomeText2.setText("This is a cool test!"); }
+    public void addProfile(String name)
+    {
+        profiles.add(name);
+    }
+
 }
