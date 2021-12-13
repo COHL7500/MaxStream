@@ -1,19 +1,18 @@
 package project_code;
+import javafx.scene.paint.Color;
+
 import java.util.*;
+import javafx.scene.paint.Color;
 
 public class ProfileController
 {
-    public ArrayList profiles;
+    ArrayList<Object> profiles = new ArrayList<>();
+    Color profileColor;
 
-    public void OnStart()
+    public void newProfile(String name, Color color, int r, int g, int b)
     {
-        profiles = new ArrayList();
-
+        Object profile = new Object();
+        profiles.add(profile);
+        System.out.println(profiles);
     }
-
-    public void addProfile(String name)
-    {
-        profiles.add(name);
-    }
-
 }
