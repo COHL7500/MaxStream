@@ -9,9 +9,9 @@ import java.io.IOException;
 public class ITUStreamApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(ITUStreamApplication.class.getResource("main-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(ITUStreamApplication.class.getResource("profile-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load()); // v = horizontal, v2 = vertical
-        stage.setTitle("ITUStream - Front page");
+        stage.setTitle("ITUStream - Select Profile");
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();

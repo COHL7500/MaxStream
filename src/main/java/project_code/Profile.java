@@ -8,7 +8,7 @@ class Profile {
     String color;
     String name;
     boolean kidsAcc;
-    ArrayList<Object> videoList = new ArrayList<Object>();
+    ArrayList<Video> videoList = new ArrayList<Video>();
 
     //TODO:
     // - Read all user data from a file

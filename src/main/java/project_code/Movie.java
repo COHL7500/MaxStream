@@ -7,21 +7,19 @@ import java.util.ArrayList;
 public class Movie extends Video {
 
     String title;
+    int releaseYear;
+    String[] genres;
+    double rating;
     Image coverImage;
-    String description;
-    int rating;
-    String releaseDate;
-    ArrayList<String> genres;
 
 
-    public Movie(String title, String imgPath, String desc, int rating, String release)
+    public Movie(String title, int release, String[] genres, String imgPath, double rating)
     {
         this.title = title;
-        this.coverImage = new Image(imgPath, true);
-        this.description = desc;
+        this.releaseYear = release;
+        this.genres = genres;
         this.rating = rating;
-        this.releaseDate = release;
-        this.genres = new ArrayList<>();
+        this.coverImage = new Image(imgPath, true);
     }
 
     @Override

@@ -1,6 +1,14 @@
 package project_code.controllers;
 
+import javafx.fxml.FXML;
+
 public class MainController {
+
+    @FXML
+    public void initialize()
+    {
+
+    }
 
     //TODO:
     // Grouping the pictures

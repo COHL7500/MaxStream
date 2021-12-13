@@ -9,11 +9,10 @@ public abstract class Video {
     // Man kunne eventuelt have skuespillere inkluderet, dog skulle man tjekke det for alle 100 film.
 
     String title;
-    String coverImage;
-    String description;
-    int rating;
-    String releaseYear;
-    ArrayList<String> genres;
+    int releaseYear;
+    String[] genres;
+    double rating;
+    Image coverImage;
 
     // Skal være mere konkret end "Object".
     // Skal returnere en videotype, f.eks. serie/profil
