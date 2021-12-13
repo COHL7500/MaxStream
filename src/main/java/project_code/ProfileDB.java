@@ -20,4 +20,9 @@ public class ProfileDB {
     {
         profileList.add(profile);
     }
+
+    Profile getProfile(int index)
+    {
+        return profileList.get(index);
+    }
 }
