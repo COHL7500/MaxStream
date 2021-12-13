@@ -6,13 +6,28 @@ import javafx.scene.paint.Color;
 
 public class ProfileController
 {
-    ArrayList<Object> profiles = new ArrayList<>();
-    Color profileColor;
+    String name;
+    String color;
+    int age;
+    Boolean kidAcc;
 
-    public void newProfile(String name, Color color, int r, int g, int b)
+    ArrayList<Object> profiles = new ArrayList<>();
+
+    public Object Profile(String name, String color, int age, boolean kidAcc)
     {
-        Object profile = new Object();
-        profiles.add(profile);
-        System.out.println(profiles);
+        this.name = name;
+        this.color = color;
+        this.age = age;
+        this.kidAcc = kidAcc;
+        if (age < 12)
+        {
+            kidAcc = true;
+        } else {kidAcc = false;}
+
+        return null;
+    }
+    public void addProfile()
+    {
+        profiles.add(Profile(name, color, age, kidAcc));
     }
 }
