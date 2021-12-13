@@ -14,23 +14,4 @@ public class VideoDB {
     public void videoDB()
     {
     }
-
-
-    final static String filePath = "temp.txt";
-
-    public static Map<String, String> MapFromFile()
-    {
-        Map<String, String> map = new HashMap<String, String>();
-
-        BufferedReader br = null;
-
-
-        return map;
-    }
-
-
-
-
-
-
 }
