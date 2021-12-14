@@ -1,19 +1,29 @@
 package project_code.controllers;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.event.ActionEvent;
 
 public class ProfileController {
-    @FXML
-    private Label welcomeText;
-    @FXML
-    private Label welcomeText2;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    private ColorPicker avatarColorPicker;
+
+    @FXML
+    private Color avatarColor;
+
+    @FXML
+    Circle AVATAR;
+
+    @FXML
+    protected void setAvatarColor(ActionEvent event)
+    {
+        AVATAR.setFill(avatarColorPicker.getValue());
     }
 
-    @FXML
-    protected void onAnotherButtonClick() {welcomeText2.setText("This is a cool test!"); }
+
+
 }
