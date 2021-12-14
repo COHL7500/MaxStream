@@ -11,6 +11,14 @@ public class VideoDB {
 
    // HashMap<Video, Button> videoDB = new HashMap<Video, Button>();
 
+    public void printMovieList()throws FileNotFoundException
+    {
+        for(Video v : listOfMovies())
+        {
+            System.out.println(v);
+        }
+    }
+
     public void videoDB()
     {
     }
