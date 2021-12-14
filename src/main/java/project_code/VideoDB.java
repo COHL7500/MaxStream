@@ -67,6 +67,7 @@ public class VideoDB {
                     br.close();
                 } catch (Exception e)
                 {
+                    e.getMessage();
                 }
             }
         }
