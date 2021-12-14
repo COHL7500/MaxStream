@@ -7,5 +7,4 @@ module com.example.grpro15_proj {
     exports project_code;
     exports project_code.controllers;
     opens project_code.controllers to javafx.fxml;
-    opens project_code.controllers to javafx.controls;
 }
