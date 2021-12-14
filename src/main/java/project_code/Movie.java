@@ -2,8 +2,6 @@ package project_code;
 
 import javafx.scene.image.Image;
 
-import java.util.ArrayList;
-
 public class Movie extends Video {
 
     String title;
@@ -12,14 +10,14 @@ public class Movie extends Video {
     double rating;
     Image coverImage;
 
-
-    public Movie(String title, int release, String[] genres, String imgPath, double rating)
+    public Movie(String title, int release, String[] genres, Image image, double rating)
     {
         this.title = title;
         this.releaseYear = release;
         this.genres = genres;
         this.rating = rating;
-        this.coverImage = new Image(imgPath, true);
+        this.coverImage = image;
+        //this.coverImage = new Image(imgPath, true);
     }
 
     @Override

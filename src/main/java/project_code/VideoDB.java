@@ -1,13 +1,22 @@
 package project_code;
 
-import java.io.*;
+import javafx.scene.image.Image;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class VideoDB {
 
+    public static void main(String[] args) throws FileNotFoundException {
+        printMovieList();
+    }
+
     //HashMap<Video, Button> videoDB = new HashMap<Video, Button>();
 
-    public void printMovieList()throws FileNotFoundException
+    public static void printMovieList()throws FileNotFoundException
     {
         for(Video v : listOfMovies())
         {
@@ -20,7 +29,7 @@ public class VideoDB {
 
     }
 
-    final static String filePath = "film.txt";
+    final static String filePath = "src/main/resources/film.txt";
 
     public static ArrayList<Video> listOfMovies() throws FileNotFoundException {
         ArrayList<Video> movieList = new ArrayList<>();
@@ -45,12 +54,18 @@ public class VideoDB {
                 String[] genre = genres.split(",");
 
                 String rating = parts[3].trim();
-
+                rating = rating.replace(",",".");
                 double d = Double.parseDouble(rating);
+
+                String name = title + ".jpg";
+
+                Image image = new Image(System.class.getResource(name).toString(), true);
+                
+                System.class.getResource(title + ".jpg");
 
                 if (!title.equals("") && !year.equals("") && !genres.equals("") && !rating.equals(""))
                 {
-                    Movie m = new Movie(title, i, genre, "", d);
+                    Movie m = new Movie(title, i, genre,image, d);
 
                     movieList.add(m);
                 }
