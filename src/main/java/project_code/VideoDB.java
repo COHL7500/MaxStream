@@ -1,11 +1,10 @@
 package project_code;
 
-//import javafx.scene.control.Button;
-
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.io.*;
-import java.util.Map;
 
 public class VideoDB {
 
@@ -13,6 +12,8 @@ public class VideoDB {
 
     public void printMovieList()throws FileNotFoundException
     {
+        listOfMovies();
+
         for(Video v : listOfMovies())
         {
             System.out.println(v);
@@ -23,7 +24,7 @@ public class VideoDB {
     {
     }
 
-    final static String filePath = "temp.txt";
+    final static String filePath = "film.txt";
 
     public static ArrayList<Video> listOfMovies() throws FileNotFoundException {
         ArrayList<Video> movieList = new ArrayList<>();
