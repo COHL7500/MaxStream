@@ -20,5 +20,15 @@ public abstract class Video {
 
     public abstract Image getImage();
 
+    public String getInfo()
+    {
+        String s = ("Title: " + title + "\n" +
+                "Release year: " + releaseYear + "\n" +
+                "Genres: " + genres + "\n" +
+                "IMDB Rating: " + rating);
+        return s;
+
+
+    }
 
 }

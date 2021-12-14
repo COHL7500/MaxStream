@@ -12,11 +12,9 @@ public class VideoDB {
 
     public void printMovieList()throws FileNotFoundException
     {
-        listOfMovies();
-
         for(Video v : listOfMovies())
         {
-            System.out.println(v);
+            System.out.println(v.getInfo());
         }
     }
 
