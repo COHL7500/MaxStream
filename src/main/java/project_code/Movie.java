@@ -10,13 +10,13 @@ public class Movie extends Video {
     double rating;
     Image coverImage;
 
-    public Movie(String title, int release, String[] genres, Image image, double rating)
+    public Movie(String title, int release, String[] genres, double rating)
     {
         this.title = title;
         this.releaseYear = release;
         this.genres = genres;
         this.rating = rating;
-        this.coverImage = image;
+        //this.coverImage = image;
         //this.coverImage = new Image(imgPath, true);
     }
 

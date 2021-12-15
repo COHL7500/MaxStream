@@ -1,11 +1,11 @@
 package project_code;
 
-import javafx.scene.image.Image;
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class VideoDB {
@@ -31,12 +31,17 @@ public class VideoDB {
 
     final static String filePath = "src/main/resources/film.txt";
 
+    final static Path path = Paths.get("film.txt");
+
+
+
     public static ArrayList<Video> listOfMovies() throws FileNotFoundException {
         ArrayList<Video> movieList = new ArrayList<>();
 
         BufferedReader br = null;
         try {
-            FileReader file = new FileReader(filePath);
+            FileReader file;
+            file = new FileReader(filePath);
 
             br = new BufferedReader(file);
 
@@ -59,13 +64,17 @@ public class VideoDB {
 
                 String name = title + ".jpg";
 
-                Image image = new Image(System.class.getResource(name).toString(), true);
-                
-                System.class.getResource(title + ".jpg");
+                //File tempfile = new File("src\\main\\resources\\images\\movies\\" + title + ".jpg");
+
+                //String tempString = "" + title + ".jpg";
+
+                //Image image = new Image(tempString, true);
+
+
 
                 if (!title.equals("") && !year.equals("") && !genres.equals("") && !rating.equals(""))
                 {
-                    Movie m = new Movie(title, i, genre,image, d);
+                    Movie m = new Movie(title, i, genre, d);
 
                     movieList.add(m);
                 }
