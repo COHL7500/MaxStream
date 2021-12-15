@@ -6,6 +6,8 @@ public class ProfileDB {
 
     static private ArrayList<Profile> profileList = new ArrayList<>();
 
+    static public Profile currProfile;
+
     static public int getProfileListLength()
     {
         return profileList.size();
@@ -25,4 +27,6 @@ public class ProfileDB {
     {
         return profileList.get(index);
     }
+
+
 }

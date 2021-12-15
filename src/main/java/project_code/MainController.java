@@ -1,13 +1,17 @@
 package project_code;
 
 import javafx.fxml.FXML;
+import javafx.scene.shape.Circle;
 
 public class MainController {
 
     @FXML
+    private Circle profileAvatar;
+
+    @FXML
     public void initialize()
     {
-
+        profileAvatar.setFill(ProfileDB.currProfile.getColor());
     }
 
     //TODO:

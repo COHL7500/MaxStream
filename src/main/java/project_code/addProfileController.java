@@ -92,6 +92,7 @@ public class addProfileController {
             warnText.setText("Age cannot contain letters!");
 
             warnText.setOpacity(1.0);
+
         } else {
 
             Profile profile = new Profile(Integer.parseInt(ageField.getText()),

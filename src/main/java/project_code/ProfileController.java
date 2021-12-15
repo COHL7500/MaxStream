@@ -35,6 +35,15 @@ public class ProfileController {
     public Circle profileAvatar3;
 
     @FXML
+    public Button profile1Button;
+
+    @FXML
+    public Button profile2Button;
+
+    @FXML
+    public Button profile3Button;
+
+    @FXML
     private void initialize()
     {
 
@@ -61,6 +70,29 @@ public class ProfileController {
     protected void switchToAddProfileScene(ActionEvent event) throws IOException
     {
         Parent root = FXMLLoader.load(getClass().getResource("addProfile-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    protected void switchToMainScene(ActionEvent event) throws IOException
+    {
+        if(profile1Button == event.getTarget())
+        {
+            ProfileDB.currProfile = ProfileDB.getProfile(0);
+        }
+        else if(profile2Button == event.getTarget())
+        {
+            ProfileDB.currProfile = ProfileDB.getProfile(1);
+        }
+        else if(profile2Button == event.getTarget())
+        {
+            ProfileDB.currProfile = ProfileDB.getProfile(2);
+        }
+
+        Parent root = FXMLLoader.load(getClass().getResource("main-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
