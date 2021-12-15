@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class VideoDB {
 
-    HashMap<Video, Button> videoDB = new HashMap<Video, Button>();
+    HashMap<Video, Button> videoDB = new HashMap<>();
 
     public void videoDB()
     {

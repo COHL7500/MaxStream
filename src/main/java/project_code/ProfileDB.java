@@ -4,24 +4,24 @@ import java.util.ArrayList;
 
 public class ProfileDB {
 
-    private ArrayList<Profile> profileList;
+    static private ArrayList<Profile> profileList = new ArrayList<>();
 
-    public ProfileDB()
+    static public int getProfileListLength()
     {
-        this.profileList = new ArrayList<>();
+        return profileList.size();
     }
 
-    void removeProfile(Profile profile)
+    static public void removeProfile(Profile profile)
     {
         profileList.remove(profile);
     }
 
-    void addProfile(Profile profile)
+    static public void addProfile(Profile profile)
     {
         profileList.add(profile);
     }
 
-    Profile getProfile(int index)
+    static Profile getProfile(int index)
     {
         return profileList.get(index);
     }

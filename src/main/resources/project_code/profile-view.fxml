@@ -13,8 +13,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
-fx:controller="project_code.controllers.ProfileController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project_code.ProfileController" fx:id="profileWindow">
    <left>
       <Pane prefHeight="115.0" prefWidth="115.0" style="-fx-background-color: #1d2020#1d2020; -fx-border-color: #1d2020#1d2020;" BorderPane.alignment="CENTER" />
    </left>
@@ -26,7 +25,7 @@ fx:controller="project_code.controllers.ProfileController">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="199.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@/images/logo/logo_maxstream.png"/>
+                  <Image url="@../images/logo/logo_maxstream.png"/>
                </image>
             </ImageView>
          </children>
@@ -35,7 +34,7 @@ fx:controller="project_code.controllers.ProfileController">
    <bottom>
       <Pane prefHeight="109.0" prefWidth="600.0" style="-fx-background-color: #1d2020#1d2020; -fx-border-color: #1d2020#1d2020;" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="233.0" layoutY="13.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: #1d2020; -fx-border-width: 3; -fx-border-color: #404646#404646; -fx-border-radius: 25; border: solid;" text="+ Add Profile" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" wrapText="true">
+            <Button layoutX="233.0" layoutY="13.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: #1d2020; -fx-border-width: 3; -fx-border-color: #404646#404646; -fx-border-radius: 25; border: solid;" text="+ Add Profile" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" wrapText="true" fx:id="createAccountButton" onAction="#switchToAddProfileScene">
                <font>
                   <Font name="System Font" size="14.0" />
                </font>
@@ -59,7 +58,7 @@ fx:controller="project_code.controllers.ProfileController">
                   <Insets left="20.0" />
                </GridPane.margin>
                <graphic>
-                  <Circle fill="#ffd1ff" radius="35.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fill="#ffd1ff" radius="35.0" stroke="BLACK" strokeType="INSIDE" opacity="0" fx:id="profileAvatar1"/>
                </graphic>
             </Button>
             <Button mnemonicParsing="false" style="-fx-background-color: #1d2020;" GridPane.columnIndex="1">
@@ -67,7 +66,7 @@ fx:controller="project_code.controllers.ProfileController">
                   <Insets left="20.0" />
                </GridPane.margin>
                <graphic>
-                  <Circle fill="#c5cbcb" radius="35.0" stroke="BLACK" strokeType="INSIDE" style="-fx-background-color: #1d2020;" />
+                  <Circle fill="#c5cbcb" radius="35.0" stroke="BLACK" strokeType="INSIDE" style="-fx-background-color: #1d2020" opacity="0" fx:id="profileAvatar2"/>
                </graphic>
             </Button>
             <Button mnemonicParsing="false" style="-fx-background-color: #1d2020;" GridPane.columnIndex="2">
@@ -75,7 +74,7 @@ fx:controller="project_code.controllers.ProfileController">
                   <Insets left="20.0" />
                </GridPane.margin>
                <graphic>
-                  <Circle fill="#beffff" radius="35.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fill="#beffff" radius="35.0" stroke="BLACK" strokeType="INSIDE" opacity="0" fx:id="profileAvatar3"/>
                </graphic>
             </Button>
          </children>

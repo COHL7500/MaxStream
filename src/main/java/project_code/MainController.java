@@ -1,4 +1,4 @@
-package project_code.controllers;
+package project_code;
 
 import javafx.fxml.FXML;
 
