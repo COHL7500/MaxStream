@@ -1,9 +1,7 @@
 package project_code;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -18,41 +16,38 @@ public class VideoDB {
 
     public static void printMovieList()throws FileNotFoundException
     {
-        for(Video v : listOfMovies())
+        ArrayList<Video> movieList = listOfMovies();
+
+        for(Video v : movieList)
         {
             System.out.println(v.getInfo());
         }
-    }
-
-    public void videoDB()
-    {
-
     }
 
     final static String filePath = "src/main/resources/film.txt";
 
     final static Path path = Paths.get("film.txt");
 
-
-
     public static ArrayList<Video> listOfMovies() throws FileNotFoundException {
         ArrayList<Video> movieList = new ArrayList<>();
 
         BufferedReader br = null;
         try {
-            FileReader file;
-            file = new FileReader(filePath);
+            FileReader file = new FileReader(filePath);
 
             br = new BufferedReader(file);
 
             String line = null;
 
-            while ((line = br.readLine()) != null) {
-                String[] parts = line.split(";");
+            while ((line = br.readLine()) != null)
+            {
+                String temp = line.replaceAll(";","'");
+                String[] parts = temp.split("'");
+
 
                 String title = parts[0].trim();
-                String year = parts[1].trim();
 
+                String year = parts[1].trim();
                 int i = Integer.parseInt(year);
 
                 String genres = parts[2].trim();
@@ -62,21 +57,17 @@ public class VideoDB {
                 rating = rating.replace(",",".");
                 double d = Double.parseDouble(rating);
 
-                String name = title + ".jpg";
+                ImageLoader imageLoader = new ImageLoader();
 
-                //File tempfile = new File("src\\main\\resources\\images\\movies\\" + title + ".jpg");
+                String posterPath = ImageLoader.test(title + ".jpg");
 
-                //String tempString = "" + title + ".jpg";
+                if (!title.equals("") && !year.equals("") && !genres.equals("") && !rating.equals("")) {
+                    assert posterPath != null;
+                    if (!posterPath.equals("")) {
+                        Movie m = new Movie(title, i, genre, posterPath, d);
 
-                //Image image = new Image(tempString, true);
-
-
-
-                if (!title.equals("") && !year.equals("") && !genres.equals("") && !rating.equals(""))
-                {
-                    Movie m = new Movie(title, i, genre, d);
-
-                    movieList.add(m);
+                        movieList.add(m);
+                    }
                 }
             }
 
@@ -84,6 +75,10 @@ public class VideoDB {
             System.out.println(e.getMessage());
         } catch (IOException e) {
             System.out.print(e.getMessage());
+        } catch (NullPointerException e) {
+            e.getMessage();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
         } finally {
             if (br != null) {
                 try
@@ -91,7 +86,7 @@ public class VideoDB {
                     br.close();
                 } catch (Exception e)
                 {
-                    e.getMessage();
+                    System.out.println("Something went wrong");
                 }
             }
         }
