@@ -34,4 +34,14 @@ public class Series extends Video {
     {
         return this.coverImage;
     }
+
+    @Override
+    public String getInfo()
+    {
+        String s = ("Title: " + title + "\n" +
+                "Release year: " + releaseYear + "\n" +
+                "Genres: " + genres + "\n" +
+                "IMDB Rating: " + rating);
+        return s;
+    }
 }

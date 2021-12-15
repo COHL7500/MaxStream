@@ -2,8 +2,6 @@ package project_code;
 
 import javafx.scene.image.Image;
 
-import java.util.ArrayList;
-
 public abstract class Video {
 
     // Man kunne eventuelt have skuespillere inkluderet, dog skulle man tjekke det for alle 100 film.
@@ -20,15 +18,6 @@ public abstract class Video {
 
     public abstract Image getImage();
 
-    public String getInfo()
-    {
-        String s = ("Title: " + title + "\n" +
-                "Release year: " + releaseYear + "\n" +
-                "Genres: " + genres + "\n" +
-                "IMDB Rating: " + rating);
-        return s;
-
-
-    }
+    public abstract String getInfo();
 
 }
