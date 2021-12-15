@@ -20,5 +20,7 @@ public abstract class Video {
 
     public abstract Image getImage();
 
+    public abstract String getInfo();
+
 
 }

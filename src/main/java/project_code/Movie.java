@@ -2,7 +2,7 @@ package project_code;
 
 import javafx.scene.image.Image;
 
-import java.util.ArrayList;
+import java.net.URISyntaxException;
 
 public class Movie extends Video {
 
@@ -11,16 +11,18 @@ public class Movie extends Video {
     String[] genres;
     double rating;
     Image coverImage;
+    String imagePath;
 
-
-    public Movie(String title, int release, String[] genres, String imgPath, double rating)
-    {
+    public Movie(String title, int release, String[] genres,String imgPath, double rating) throws URISyntaxException {
         this.title = title;
         this.releaseYear = release;
         this.genres = genres;
         this.rating = rating;
-        this.coverImage = new Image(imgPath, true);
+        this.imagePath = imgPath;
+        coverImage = new Image(getClass().getResource(imgPath).toURI().toString());
+
     }
+
 
     @Override
     public Video getVideoType() {
@@ -30,5 +32,15 @@ public class Movie extends Video {
     @Override
     public Image getImage() {
         return coverImage;
+    }
+
+    @Override
+    public String getInfo()
+    {
+        String s = ("Title: " + title + "\n" +
+                "Release year: " + releaseYear + "\n" +
+                "Genres: " + genres + "\n" +
+                "IMDB Rating: " + rating);
+        return s;
     }
 }

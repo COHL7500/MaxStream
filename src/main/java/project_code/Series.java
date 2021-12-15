@@ -17,7 +17,7 @@ public class Series extends Video {
     {
         this.title = title;
         this.coverImage = image;
-        this.rating = rating % 10.0;
+        this.rating = rating;
         this.releaseYear = relYear;
         this.genres = genres;
         this.episodes = new ArrayList<>();
@@ -33,5 +33,15 @@ public class Series extends Video {
     public Image getImage()
     {
         return this.coverImage;
+    }
+
+    @Override
+    public String getInfo()
+    {
+        String s = ("Title: " + title + "\n" +
+                "Release year: " + releaseYear + "\n" +
+                "Genres: " + genres + "\n" +
+                "IMDB Rating: " + rating);
+        return s;
     }
 }
