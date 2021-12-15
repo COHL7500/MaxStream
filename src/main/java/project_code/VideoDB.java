@@ -1,9 +1,10 @@
 package project_code;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.net.URISyntaxException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class VideoDB {
@@ -26,9 +27,7 @@ public class VideoDB {
 
     final static String filePath = "src/main/resources/film.txt";
 
-    final static Path path = Paths.get("film.txt");
-
-    public static ArrayList<Video> listOfMovies() throws FileNotFoundException {
+    public static ArrayList<Video> listOfMovies() {
         ArrayList<Video> movieList = new ArrayList<>();
 
         BufferedReader br = null;
@@ -44,7 +43,6 @@ public class VideoDB {
                 String temp = line.replaceAll(";","'");
                 String[] parts = temp.split("'");
 
-
                 String title = parts[0].trim();
 
                 String year = parts[1].trim();
@@ -57,24 +55,20 @@ public class VideoDB {
                 rating = rating.replace(",",".");
                 double d = Double.parseDouble(rating);
 
-                ImageLoader imageLoader = new ImageLoader();
-
-                String posterPath = ImageLoader.test(title + ".jpg");
+                String posterPath = ImageLoader.test2(title + ".jpg");
 
                 if (!title.equals("") && !year.equals("") && !genres.equals("") && !rating.equals("")) {
-                    assert posterPath != null;
-                    if (!posterPath.equals("")) {
-                        Movie m = new Movie(title, i, genre, posterPath, d);
 
-                        movieList.add(m);
-                    }
+                    Movie m = new Movie(title, i, genre, posterPath, d);
+
+                    movieList.add(m);
                 }
             }
 
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
         } catch (IOException e) {
-            System.out.print(e.getMessage());
+            System.out.println(e.getMessage());
         } catch (NullPointerException e) {
             e.getMessage();
         } catch (URISyntaxException e) {
@@ -86,10 +80,12 @@ public class VideoDB {
                     br.close();
                 } catch (Exception e)
                 {
+                    e.printStackTrace();
                     System.out.println("Something went wrong");
                 }
             }
         }
+        System.out.println(movieList);
         return movieList;
     }
 

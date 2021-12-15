@@ -12,21 +12,49 @@ public class ImageLoader {
 
     public static void main(String[] args) throws IOException {
 
-        //listOfMovies();
+       // listOfMovies();
 
-        //String temp = "2001 A Space Odyssey";
+        String temp = "2001 A Space Odyssey";
 
-        //test(temp + ".jpg");
+        test2(temp + ".jpg");
     }
 
-    public static void listOfMovies() throws IOException
+    public static List<File> listOfMovies() throws IOException
     {
         List<File> filesInFolder = Files.walk(Paths.get("src/main/resources/images/movies"))
                 .filter(Files::isRegularFile)
                 .map(Path::toFile).toList();
 
-        System.out.println(filesInFolder);
 
+
+        for (int i = 0; i <filesInFolder.size(); i++)
+        {
+            //System.out.println(filesInFolder.get(i));
+            //System.out.println(folderFiles);
+        }
+
+        return filesInFolder;
+    }
+
+    public static String test2(String fileName) throws NullPointerException, IOException {
+
+
+        List<File> listOfMovies = listOfMovies();
+
+        for (File f: listOfMovies)
+        {
+            if (f.isFile())
+            {
+                if(f.getName().equals(fileName))
+                {
+                    System.out.println(f.getPath());
+                    return f.getPath();
+                }
+
+            }
+        }
+        System.out.println(listOfMovies);
+        return listOfMovies.toString();
     }
 
     public static String test(String fileName) throws NullPointerException
@@ -47,14 +75,16 @@ public class ImageLoader {
                 if(file.getName().equals(fileName))
                 {
                     //System.out.println(fileName);
+                    System.out.println(listOfFiles);
                     return file.getPath();
                     //return "src/main/resources/images/movies/" + fileName;
                 }
 
             }
         }
-        System.out.println("No filename found");
-        return null;
+        //System.out.println("No filename found");
+        System.out.println(movieList);
+        return movieList.toString();
     }
 
 }
