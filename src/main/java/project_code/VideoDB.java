@@ -15,8 +15,7 @@ public class VideoDB {
 
     //HashMap<Video, Button> videoDB = new HashMap<Video, Button>();
 
-    public static void printMovieList()throws FileNotFoundException
-    {
+    public static void printMovieList() {
         ArrayList<Video> movieList = listOfMovies();
 
         for(Video v : movieList)
@@ -36,12 +35,16 @@ public class VideoDB {
 
             br = new BufferedReader(file);
 
-            String line = null;
+            String line = br.readLine();
+
+            //String temp2 = line.replaceAll(";","'");
+
+
 
             while ((line = br.readLine()) != null)
             {
-                String temp = line.replaceAll(";","'");
-                String[] parts = temp.split("'");
+                //String temp = line.replaceAll(";","'");
+                String[] parts = line.split(";");
 
                 String title = parts[0].trim();
 
