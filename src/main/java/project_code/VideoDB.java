@@ -1,9 +1,7 @@
 package project_code;
 
-import java.io.*;
-import java.net.URISyntaxException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -15,13 +13,13 @@ public class VideoDB extends ImageLoader {
     private static ArrayList<Movie> movieList = new ArrayList<>();
     private static ArrayList<Series> seriesList = new ArrayList<>();
 
-    public static void main(String[] args) throws IOException, URISyntaxException {
+    public static void main(String[] args) throws IOException {
     }
 
     public static void initMovieList() throws IOException {
 
         int loopCount = 0;
-        File path = new File("src/main/resources/serier.txt");
+        File path = new File("src/main/resources/film.txt");
         Scanner scanner = new Scanner(path);
         scanner.useDelimiter("\\s*;\\s*");
 
