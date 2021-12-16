@@ -9,18 +9,22 @@ import java.util.ArrayList;
 
 public class VideoDB {
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
         printMovieList();
     }
 
     //HashMap<Video, Button> videoDB = new HashMap<Video, Button>();
 
-    public static void printMovieList() {
+    public static void printMovieList()
+    {
         ArrayList<Video> movieList = listOfMovies();
 
         for(Video v : movieList)
         {
-            System.out.println(v.getInfo());
+            System.out.println("Title: " + v.title + "\n" +
+                    "Release year: " + v.releaseYear + "\n" +
+                    "Genres: " + v.genres + "\n" +
+                    "IMDB Rating: " + v.rating);
         }
     }
 
@@ -37,14 +41,13 @@ public class VideoDB {
 
             String line = br.readLine();
 
-            //String temp2 = line.replaceAll(";","'");
-
-
-
-            while ((line = br.readLine()) != null)
+            while (line != null)
             {
-                //String temp = line.replaceAll(";","'");
-                String[] parts = line.split(";");
+
+                String temp = line.replaceAll(";",":");
+                System.out.println(temp);
+                String[] parts = line.split(":");
+                System.out.println(parts.length);
 
                 String title = parts[0].trim();
 
@@ -58,6 +61,11 @@ public class VideoDB {
                 rating = rating.replace(",",".");
                 double d = Double.parseDouble(rating);
 
+                for (String s: parts)
+                {
+                    System.out.println(s);
+                }
+
                 String posterPath = ImageLoader.test2(title + ".jpg");
 
                 if (!title.equals("") && !year.equals("") && !genres.equals("") && !rating.equals("")) {
@@ -66,12 +74,13 @@ public class VideoDB {
 
                     movieList.add(m);
                 }
+                line = br.readLine();
             }
 
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            System.out.println(e.getMessage() + "");
         } catch (NullPointerException e) {
             e.getMessage();
         } catch (URISyntaxException e) {
