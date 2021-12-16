@@ -12,17 +12,17 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="profileWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project_code.ProfileController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="791.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project_code.ProfileController">
    <left>
-      <Pane prefHeight="115.0" prefWidth="115.0" style="-fx-background-color: #1d2020#1d2020; -fx-border-color: #1d2020#1d2020;" BorderPane.alignment="CENTER" />
+      <Pane prefHeight="384.0" prefWidth="300.0" style="-fx-background-color: #1d2020#1d2020; -fx-border-color: #1d2020#1d2020;" BorderPane.alignment="CENTER" />
    </left>
    <right>
-      <Pane prefHeight="115.0" prefWidth="115.0" style="-fx-background-color: #1d2020; -fx-border-color: #1d2020#1d2020;" BorderPane.alignment="CENTER" />
+      <Pane prefHeight="384.0" prefWidth="300.0" style="-fx-background-color: #1d2020; -fx-border-color: #1d2020#1d2020;" BorderPane.alignment="CENTER" />
    </right>
    <top>
-      <Pane prefHeight="176.0" prefWidth="600.0" style="-fx-background-color: #1d2020; -fx-border-color: #1d2020#1d2020;" BorderPane.alignment="CENTER">
+      <Pane prefHeight="298.0" prefWidth="1440.0" style="-fx-background-color: #1d2020; -fx-border-color: #1d2020#1d2020;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="199.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="184.0" fitWidth="502.0" layoutX="457.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/logo/logo_maxstream.png" />
                </image>
@@ -31,18 +31,18 @@
       </Pane>
    </top>
    <bottom>
-      <Pane prefHeight="109.0" prefWidth="600.0" style="-fx-background-color: #1d2020#1d2020; -fx-border-color: #1d2020#1d2020;" BorderPane.alignment="CENTER">
+      <Pane prefHeight="260.0" prefWidth="1440.0" style="-fx-background-color: #1d2020#1d2020; -fx-border-color: #1d2020#1d2020;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="createAccountButton" layoutX="233.0" layoutY="13.0" mnemonicParsing="false" onAction="#switchToAddProfileScene" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: #1d2020; -fx-border-width: 3; -fx-border-color: #404646#404646; -fx-border-radius: 25; border: solid;" text="+ Add Profile" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" wrapText="true">
+            <Button fx:id="addProfileButton" alignment="CENTER" layoutX="557.0" layoutY="47.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToAddProfileScene" prefHeight="63.0" prefWidth="324.0" style="-fx-background-color: #1d2020; -fx-border-width: 3; -fx-border-color: #404646#404646; -fx-border-radius: 25; border: solid;" text="+ Add Profile" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" wrapText="true">
                <font>
-                  <Font name="System Font" size="14.0" />
+                  <Font name="Shree Devanagari 714" size="30.0" />
                </font>
             </Button>
          </children>
       </Pane>
    </bottom>
    <center>
-      <GridPane style="-fx-background-color: #1d2020#1d2020; -fx-border-color: #1d2020#1d2020;" BorderPane.alignment="CENTER">
+      <GridPane prefHeight="384.0" prefWidth="1057.0" style="-fx-background-color: #1d2020#1d2020; -fx-border-color: #1d2020#1d2020;" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -52,28 +52,28 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="profile1Button" mnemonicParsing="false" onAction="#switchToMainScene" prefHeight="33.0" prefWidth="22.0" style="-fx-background-color: #1d2020;">
+            <Button fx:id="profile1Button" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchToMainScene" prefHeight="33.0" prefWidth="22.0" style="-fx-background-color: #1d2020;">
                <GridPane.margin>
-                  <Insets left="20.0" />
+                  <Insets left="75.0" />
                </GridPane.margin>
                <graphic>
-                  <Circle fx:id="profileAvatar1" fill="#ffd1ff" opacity="0" radius="35.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="profileAvatar1" fill="#ffd1ff" opacity="0.0" radius="60.0" stroke="BLACK" strokeType="INSIDE" />
                </graphic>
             </Button>
             <Button fx:id="profile2Button" mnemonicParsing="false" onAction="#switchToMainScene" style="-fx-background-color: #1d2020;" GridPane.columnIndex="1">
                <GridPane.margin>
-                  <Insets left="20.0" />
+                  <Insets left="75.0" />
                </GridPane.margin>
                <graphic>
-                  <Circle fx:id="profileAvatar2" fill="#c5cbcb" opacity="0" radius="35.0" stroke="BLACK" strokeType="INSIDE" style="-fx-background-color: #1d2020" />
+                  <Circle fx:id="profileAvatar2" fill="#c5cbcb" opacity="0.0" radius="60.0" stroke="BLACK" strokeType="INSIDE" style="-fx-background-color: #1d2020;" />
                </graphic>
             </Button>
             <Button fx:id="profile3Button" mnemonicParsing="false" onAction="#switchToMainScene" style="-fx-background-color: #1d2020;" GridPane.columnIndex="2">
                <GridPane.margin>
-                  <Insets left="20.0" />
+                  <Insets left="75.0" />
                </GridPane.margin>
                <graphic>
-                  <Circle fx:id="profileAvatar3" fill="#beffff" opacity="0" radius="35.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="profileAvatar3" fill="#beffff" opacity="0.0" radius="60.0" stroke="BLACK" strokeType="INSIDE" />
                </graphic>
             </Button>
          </children>

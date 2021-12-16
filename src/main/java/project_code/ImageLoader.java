@@ -5,6 +5,7 @@ import javafx.scene.image.Image;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -16,15 +17,21 @@ import java.util.List;
 
 public class ImageLoader {
 
+    public static void main(String[] args) throws IOException {
+        VideoDB.buildSeriesList();
+    }
+
     public static Image imageFinder(Video video) throws IOException
     {
-        String folder = video.getVideoType() instanceof Movie ? "movies" : "series";
+        String folder = video.getVideoType() instanceof Series ? "series" : "movies";
 
         String path = "/images/" + folder + "/" + video.getTitle() + ".jpg";
 
-        URL url = ITUStreamApplication.class.getResource(path);
+        URL finalPath = ITUStreamApplication.class.getResource(path);
 
-        return new Image(url.toExternalForm());
+        assert finalPath != null;
+
+        return new Image(finalPath.toExternalForm());
     }
 
     public static String test(String fileName) throws NullPointerException

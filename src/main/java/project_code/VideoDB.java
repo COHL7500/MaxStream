@@ -15,7 +15,22 @@ public class VideoDB extends ImageLoader {
     private static ArrayList<Series> seriesList = new ArrayList<>();
     private static ArrayList<Video> videoList = new ArrayList<>();
 
-    public static ArrayList<Movie> initMovieList() throws IOException {
+    public static ArrayList<Movie> getMovieList() throws IOException
+    {
+        return movieList;
+    }
+
+    public static ArrayList<Series> getSeriesList() throws IOException
+    {
+        return seriesList;
+    }
+
+    public static ArrayList<Video> getVideoList() throws IOException
+    {
+        return videoList;
+    }
+
+    public static ArrayList<Movie> buildMovieList() throws IOException {
 
         File path = new File("src/main/resources/film.txt");
         Scanner scanner = new Scanner(path);
@@ -36,7 +51,7 @@ public class VideoDB extends ImageLoader {
         return movieList;
     }
 
-    public static ArrayList<Series> initSeriesList() throws IOException
+    public static ArrayList<Series> buildSeriesList() throws IOException
     {
 
         File path = new File("src/main/resources/serier.txt");
@@ -50,19 +65,19 @@ public class VideoDB extends ImageLoader {
             double rating = scanner.nextDouble();
             String[] seasons = scanner.next().split(",\\s*");
 
-            Series m = new Series(title, year, genres, seasons, rating);
+            Series s = new Series(title, year, genres, seasons, rating);
 
-            seriesList.add(m);
+            seriesList.add(s);
         }
 
         return seriesList;
 
     }
 
-    public static ArrayList<Video> initVideoList() throws IOException
+    public static ArrayList<Video> buildVideoList() throws IOException
     {
-        videoList.addAll(initMovieList());
-        videoList.addAll(initSeriesList());
+        videoList.addAll(getMovieList());
+        videoList.addAll(getSeriesList());
 
         return videoList;
     }

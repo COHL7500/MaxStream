@@ -22,16 +22,16 @@ public class MainController {
     Scene scene;
 
     @FXML
-    private Circle profileAvatar;
+    public Circle profileAvatar;
 
     @FXML
-    private TilePane mainTilePane;
+    public TilePane mainTilePane;
 
     @FXML
-    private Button buildVideoButton(Video video) throws IOException
+    protected static Button buildVideoButton(Video video) throws IOException
     {
 
-        FXMLLoader buttonLoader = new FXMLLoader(getClass().getResource("videobutton.fxml"));
+        FXMLLoader buttonLoader = new FXMLLoader(ITUStreamApplication.class.getResource("videobutton.fxml"));
         Button button = buttonLoader.load();
 
         Image image = ImageLoader.imageFinder(video);
@@ -45,11 +45,11 @@ public class MainController {
     public void initialize() throws IOException, URISyntaxException {
         profileAvatar.setFill(ProfileDB.currProfile.getColor());
 
-        System.out.println(VideoDB.initMovieList().size());
+        System.out.println(VideoDB.getMovieList().size());
 
-        for(int i = 0; i < 200; i++)
+        for(int i = 0; i < VideoDB.getMovieList().size(); i++)
         {
-            mainTilePane.getChildren().add(buildVideoButton(VideoDB.initVideoList().get(i)));
+            mainTilePane.getChildren().add(buildVideoButton(VideoDB.getVideoList().get(i)));
         }
     }
 
@@ -61,6 +61,37 @@ public class MainController {
         stage.setScene(scene);
         stage.show();
     }
+
+    @FXML
+    public void switchToMovieScene(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("mainMovies-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void switchToSeriesScene(ActionEvent event) throws IOException
+    {
+        Parent root = FXMLLoader.load(getClass().getResource("mainSeries-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void switchToMyListScene(ActionEvent event) throws IOException
+    {
+        Parent root = FXMLLoader.load(getClass().getResource("myList-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
 
     //TODO:
     // Grouping the pictures

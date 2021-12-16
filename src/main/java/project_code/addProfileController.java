@@ -33,9 +33,6 @@ public class addProfileController {
     private TextField ageField;
 
     @FXML
-    private Button createAccountButton;
-
-    @FXML
     private Text warnText;
 
     @FXML

@@ -50,7 +50,7 @@
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Documents/GitHub/grpro15_proj/src/main/resources/Logo/logo_noBackground.png" />
+                  <Image url="@../images/logo/logo_maxstream.png" />
                </image>
             </ImageView>
          </graphic>

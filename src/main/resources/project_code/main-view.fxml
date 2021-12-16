@@ -25,17 +25,17 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="240.0" layoutY="20.0" minHeight="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: #1D2020#1D2020;" text="MOVIES" textFill="WHITE">
+      <Button layoutX="240.0" layoutY="20.0" minHeight="-Infinity" mnemonicParsing="false" onAction="#switchToMovieScene" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: #1D2020#1D2020;" text="MOVIES" textFill="WHITE">
          <font>
             <Font name="Shree Devanagari 714" size="25.0" />
          </font>
       </Button>
-      <Button layoutX="380.0" layoutY="20.0" minHeight="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" style="-fx-background-color: #1D2020#1D2020;" text="SERIES" textFill="WHITE">
+      <Button layoutX="380.0" layoutY="20.0" minHeight="-Infinity" mnemonicParsing="false" onAction="#switchToSeriesScene" prefHeight="40.0" prefWidth="117.0" style="-fx-background-color: #1D2020#1D2020;" text="SERIES" textFill="WHITE">
          <font>
             <Font name="Shree Devanagari 714" size="25.0" />
          </font>
       </Button>
-      <Button layoutX="500.0" layoutY="20.0" minHeight="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="131.0" style="-fx-background-color: #1D2020#1D2020;" text="MY LIST" textFill="WHITE">
+      <Button layoutX="500.0" layoutY="20.0" minHeight="-Infinity" mnemonicParsing="false" onAction="#switchToMyListScene" prefHeight="40.0" prefWidth="131.0" style="-fx-background-color: #1D2020#1D2020;" text="MY LIST" textFill="WHITE">
          <font>
             <Font name="Shree Devanagari 714" size="25.0" />
          </font>
