@@ -24,7 +24,7 @@
       <Pane prefHeight="125.0" prefWidth="419.0" style="-fx-background-color: #1d2020; -fx-border-color: #1d2020#1d2020;" BorderPane.alignment="CENTER">
          <children>
             <Circle fx:id="AVATAR" fill="#ffffff" layoutX="300.0" layoutY="70.0" radius="41.0" stroke="BLACK" strokeType="INSIDE" />
-            <Button fx:id="MaxStreamButton" layoutX="11.0" layoutY="10.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="50.0" style="-fx-background-color: #1d2020;" textFill="WHITE" onAction="#MaxStreamButton">
+            <Button fx:id="MaxStreamButton" layoutX="11.0" layoutY="10.0" mnemonicParsing="false" onAction="#MaxStreamButton" prefHeight="37.0" prefWidth="50.0" style="-fx-background-color: #1d2020;" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="100.0">
                      <image>

@@ -5,18 +5,71 @@ import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Scanner;
 
-public class VideoDB {
+public class VideoDB extends ImageLoader {
 
-    public static void main(String[] args) throws FileNotFoundException {
-        printMovieList();
+    String movieInfoPath = "src/main/resources/film.txt";
+    String seriesInfoPath = "src/main/resources/serier.txt";
+
+    private static ArrayList<Movie> movieList = new ArrayList<>();
+    private static ArrayList<Series> seriesList = new ArrayList<>();
+
+    public static void main(String[] args) throws IOException, URISyntaxException {
     }
 
+    public static void initMovieList() throws IOException {
+
+        int loopCount = 0;
+        File path = new File("src/main/resources/serier.txt");
+        Scanner scanner = new Scanner(path);
+        scanner.useDelimiter("\\s*;\\s*");
+
+        while(scanner.hasNext())
+        {
+            String title = scanner.next();
+            int year = Integer.parseInt(scanner.next());
+            String[] genres = scanner.next().split(",\\s*");
+            double rating = scanner.nextDouble();
+
+            Movie m = new Movie(title, year, genres, videoCoverList(seriesCoverPath).get(loopCount).toString(), rating);
+
+            movieList.add(m);
+            loopCount++;
+        }
+    }
+
+    //TODO:
+    // Fiks initSeriesList() således den udskriver alle oplysninger ordentligt
+
+    public static void initSeriesList() throws IOException
+    {
+        int loopCount = 0;
+        File path = new File("src/main/resources/serier.txt");
+        Scanner scanner = new Scanner(path);
+        scanner.useDelimiter("\\s*;\\s*");
+
+        while(scanner.hasNext())
+        {
+            String title = scanner.next();
+            int year = Integer.parseInt(scanner.next());
+            String[] genres = scanner.next().split(",\\s*");
+            double rating = scanner.nextDouble();
+
+            Movie m = new Movie(title, year, genres, videoCoverList(seriesCoverPath).get(loopCount).toString(), rating);
+
+            movieList.add(m);
+            loopCount++;
+        }
+
+    }
+
+    /*
     public static void printMovieList() throws FileNotFoundException
     {
         ArrayList<Video> movieList = listOfMovies();
 
-        for(Video v : movieList)
+        for(Video v : listOfMovies())
         {
             System.out.println(v.getInfo());
         }
@@ -35,13 +88,12 @@ public class VideoDB {
 
             br = new BufferedReader(file);
 
-            String line = null;
+            String line = br.readLine();
 
-            while ((line = br.readLine()) != null)
+            while (line != null)
             {
-                String temp = line.replaceAll(";","'");
-                String[] parts = temp.split("'");
-
+                String temp = line.replaceAll(";","_");
+                String[] parts = temp.split("_");
 
                 String title = parts[0].trim();
 
@@ -57,10 +109,11 @@ public class VideoDB {
 
                 ImageLoader imageLoader = new ImageLoader();
 
-                String posterPath = ImageLoader.test(title + ".jpg");
+                String posterPath = imageLoader.test(title + ".jpg");
 
                 if (!title.equals("") && !year.equals("") && !genres.equals("") && !rating.equals("")) {
                     assert posterPath != null;
+
                     if (!posterPath.equals("")) {
                         Movie m = new Movie(title, i, genre, posterPath, d);
 
@@ -91,7 +144,10 @@ public class VideoDB {
         return movieList;
     }
 
+
+     */
 }
+
 
 
 

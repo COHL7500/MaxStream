@@ -6,26 +6,35 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class ImageLoader {
 
+    public static String movieCoverPath = "src/main/resources/images/movies";
+
+    public static String seriesCoverPath = "src/main/resources/images/series";
+
+    /*
     public static void main(String[] args) throws IOException {
 
-        //listOfMovies();
+        System.out.println(videoCoverList(movieCoverPath));
 
-        String temp = "Forrest Gump";
+        System.out.println(videoCoverList(movieCoverPath).get(3));
 
-        test(temp + ".jpg");
+        System.out.println(videoCoverList(movieCoverPath).size());
     }
+     */
 
-    public static void listOfMovies() throws IOException
+
+    public static List videoCoverList(String filePath) throws IOException
     {
-        List<File> filesInFolder = Files.walk(Paths.get("src/main/resources/images/movies"))
+        List<File> filesInFolder = Files.walk(Paths.get(filePath)).sorted()
                 .filter(Files::isRegularFile)
                 .map(Path::toFile).toList();
 
-        System.out.println(filesInFolder);
+        return filesInFolder;
 
     }
 

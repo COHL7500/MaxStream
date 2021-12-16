@@ -9,7 +9,6 @@ class Profile {
     private int age;
     private Color color;
     private String name;
-    private boolean kidsAcc;
     ArrayList<Video> videoList = new ArrayList<>();
 
     //TODO:
@@ -22,12 +21,10 @@ class Profile {
         this.age = age;
         this.color = color;
         this.name = name;
-        this.kidsAcc = age < 18;
     }
 
     int getAge() {return age;}
     Color getColor() {return color;}
     String getName() {return name;}
-    boolean kidsAcc() {return kidsAcc;}
 
 }

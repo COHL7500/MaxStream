@@ -3,6 +3,7 @@ package project_code;
 import javafx.scene.image.Image;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public abstract class Video {
 
@@ -20,7 +21,15 @@ public abstract class Video {
 
     public abstract Image getImage();
 
-    public abstract String getInfo();
+    public String getInfo() // Egnet til testing
+    {
+        String s = ("Title: " + title + "\n" +
+                "Release year: " + releaseYear + "\n" +
+                "Genres: " + Arrays.toString(genres) + "\n" +
+                "IMDB Rating: " + rating + "\n" + "---------------");
+
+        return s;
+    }
 
 
 }
