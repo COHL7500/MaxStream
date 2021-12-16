@@ -9,7 +9,7 @@ class Profile {
     private int age;
     private Color color;
     private String name;
-    ArrayList<Video> videoList = new ArrayList<>();
+    private ArrayList<Video> myList = new ArrayList<>();
 
     //TODO:
     // - Read all user data from a file
@@ -22,6 +22,8 @@ class Profile {
         this.color = color;
         this.name = name;
     }
+
+    ArrayList<Video> getVideoList() {return myList;}
 
     int getAge() {return age;}
     Color getColor() {return color;}

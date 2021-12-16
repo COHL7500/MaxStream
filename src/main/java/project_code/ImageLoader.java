@@ -1,7 +1,11 @@
 package project_code;
 
+import javafx.application.Application;
+import javafx.scene.image.Image;
+
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -12,30 +16,15 @@ import java.util.List;
 
 public class ImageLoader {
 
-    public static String movieCoverPath = "src/main/resources/images/movies";
-
-    public static String seriesCoverPath = "src/main/resources/images/series";
-
-    /*
-    public static void main(String[] args) throws IOException {
-
-        System.out.println(videoCoverList(movieCoverPath));
-
-        System.out.println(videoCoverList(movieCoverPath).get(3));
-
-        System.out.println(videoCoverList(movieCoverPath).size());
-    }
-     */
-
-
-    public static List videoCoverList(String filePath) throws IOException
+    public static Image imageFinder(Video video) throws IOException
     {
-        List<File> filesInFolder = Files.walk(Paths.get(filePath)).sorted()
-                .filter(Files::isRegularFile)
-                .map(Path::toFile).toList();
+        String folder = video.getVideoType() instanceof Movie ? "movies" : "series";
 
-        return filesInFolder;
+        String path = "/images/" + folder + "/" + video.getTitle() + ".jpg";
 
+        URL url = ITUStreamApplication.class.getResource(path);
+
+        return new Image(url.toExternalForm());
     }
 
     public static String test(String fileName) throws NullPointerException

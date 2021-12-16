@@ -11,22 +11,23 @@ public class Movie extends Video {
     private int releaseYear;
     private String[] genres;
     private double rating;
-    private Image coverImage;
 
-    public Movie(String title, int release, String[] genres, String imagePath, double rating) {
+    public Movie(String title, int release, String[] genres, double rating) {
         this.title = title;
         this.releaseYear = release;
         this.genres = genres;
         this.rating = rating;
-        this.coverImage = new Image("file:" + imagePath);
 
     }
+
+    public String getTitle() {return this.title;}
 
     public Video getVideoType() {
         return this;
     }
 
+    public double getRating() { return this.rating; }
 
-    public Image getImage() { return this.coverImage; }
+    public  int getReleaseYear() {return this.releaseYear;}
 
 }
