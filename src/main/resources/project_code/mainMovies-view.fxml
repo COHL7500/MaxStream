@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="791.0" prefWidth="1440.0" style="-fx-background-color: #1d2020; -fx-border-color: #1d2020;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project_code.mainMoviesController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="791.0" prefWidth="1440.0" style="-fx-background-color: #1d2020; -fx-border-color: #1d2020;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project_code.MainController">
    <children>
       <Button layoutX="240.0" layoutY="20.0" minHeight="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="131.0" style="-fx-background-color: #1D2020#1D2020;" text="MOVIES" textFill="WHITE">
          <font>
@@ -40,12 +40,7 @@
                      <children>
                         <ImageView fitHeight="350.0" fitWidth="1378.0" layoutX="22.0" layoutY="21.0">
                            <image>
-                              <Image url="@../images/MainViews/MovieMainView.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="107.0" fitWidth="133.0" layoutX="34.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/PlayButton/PlayButtonWhite.png" />
+                              <Image url="@../Documents/GitHub/grpro15_proj/src/main/resources/MainViews/MovieMainView.png" />
                            </image>
                         </ImageView>
                         <Text fill="WHITE" layoutX="168.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A pragmatic paleontologist touring an almost complete theme park on an island in Central ">
@@ -75,6 +70,15 @@
                               <Font name="Shree Devanagari 714" size="30.0" />
                            </font>
                         </Text>
+                        <Button layoutX="29.0" layoutY="234.0" mnemonicParsing="false" style="-fx-background-color: no;">
+                           <graphic>
+                              <ImageView fitHeight="107.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Documents/GitHub/grpro15_proj/src/main/resources/PlayButton/PlayButtonWhite.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
                      </children>
                   </Pane>
                </top>
@@ -110,17 +114,23 @@
             </BorderPane>
          </content>
       </ScrollPane>
-      <Button layoutX="50.0" layoutY="31.0" mnemonicParsing="false" style="-fx-background-color: NO;" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="4.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/logo/logo_maxstream.png" />
-         </image>
-      </ImageView>
+      <Button layoutX="17.0" layoutY="4.0" mnemonicParsing="false" style="-fx-background-color: NO;">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Documents/GitHub/grpro15_proj/src/main/resources/Logo/logo_noBackground.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
       <TextField layoutX="1080.0" layoutY="20.0" prefHeight="8.0" prefWidth="266.0" promptText="Search" style="-fx-background-color: #424d4d; -fx-text-fill: #FFFFFF;">
          <font>
             <Font size="20.0" />
          </font>
       </TextField>
-      <Circle fill="#ffd1ff" layoutX="1395.0" layoutY="40.0" radius="31.0" stroke="BLACK" strokeType="INSIDE" />
+      <Button layoutX="1360.0" layoutY="5.0" mnemonicParsing="false" style="-fx-background-color: np;">
+         <graphic>
+            <Circle fill="#ffd1ff" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+         </graphic>
+      </Button>
    </children>
 </Pane>
