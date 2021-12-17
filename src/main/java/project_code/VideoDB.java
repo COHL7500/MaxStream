@@ -1,19 +1,25 @@
 package project_code;
 
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 
 import java.io.*;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.Locale;
-import java.util.Scanner;
+import java.util.*;
 
 public class VideoDB extends ImageLoader {
 
     private static ArrayList<Movie> movieList = new ArrayList<>();
     private static ArrayList<Series> seriesList = new ArrayList<>();
     private static ArrayList<Video> videoList = new ArrayList<>();
+    private static HashMap<Video, Button> currButtonList;
+
+    public static int currentlyShownVideo = 0;
+
+    public static HashMap<Video, Button> getCurrButtonList() {return currButtonList;}
+
+    public static void putCurrButtonList(Video video, Button button) {currButtonList.put(video, button);}
+
 
     public static ArrayList<Movie> getMovieList() throws IOException
     {
@@ -60,12 +66,19 @@ public class VideoDB extends ImageLoader {
 
         while (scanner.hasNext()) {
             String title = scanner.next();
-            String year = scanner.next().replace(" ", "");
+            String[] year = scanner.next().split("-");
+
+            int yearStart =  Integer.parseInt(year[0]);
+            int yearEnd = 0;
+
+            if (year.length > 1) yearEnd = Integer.parseInt(year[1]);
+
+
             String[] genres = scanner.next().split(",\\s*");
             double rating = scanner.nextDouble();
             String[] seasons = scanner.next().split(",\\s*");
 
-            Series s = new Series(title, year, genres, seasons, rating);
+            Series s = new Series(title, yearStart, yearEnd, genres, seasons, rating);
 
             seriesList.add(s);
         }

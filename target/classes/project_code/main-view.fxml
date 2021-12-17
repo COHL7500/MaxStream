@@ -76,7 +76,7 @@
                         </ImageView>
                         <ImageView fitHeight="107.0" fitWidth="133.0" layoutX="34.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/PlayButton/PlayButtonWhite.png" />
+                              <Image url="@../images/Buttons/PlayButtonWhite.png" />
                            </image>
                         </ImageView>
                         <Text boundsType="VISUAL" fill="WHITE" layoutX="65.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THE SHAWSHANK REDEMPTION" wrappingWidth="584.7506103515625">

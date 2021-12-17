@@ -19,7 +19,7 @@ import project_code.Profile;
 
 import java.io.IOException;
 
-public class ProfileController {
+public class ProfileController extends SceneController {
 
     Stage stage;
 
@@ -67,17 +67,7 @@ public class ProfileController {
     }
 
     @FXML
-    protected void switchToAddProfileScene(ActionEvent event) throws IOException
-    {
-        Parent root = FXMLLoader.load(getClass().getResource("addProfile-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    protected void switchToMainScene(ActionEvent event) throws IOException
+    protected void switchToMainSceneFromProfile(ActionEvent event) throws IOException
     {
         if(profile1Button == event.getTarget())
         {
@@ -98,4 +88,6 @@ public class ProfileController {
         stage.setScene(scene);
         stage.show();
     }
+
+
 }

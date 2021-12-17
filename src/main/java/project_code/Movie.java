@@ -1,16 +1,11 @@
 package project_code;
 
-import javafx.scene.image.Image;
-
-import java.net.URISyntaxException;
-import java.util.Arrays;
-
 public class Movie extends Video {
 
     private String title;
     private int releaseYear;
     private String[] genres;
-    private double rating;
+    private Double rating;
 
     public Movie(String title, int release, String[] genres, double rating) {
         this.title = title;
@@ -26,8 +21,11 @@ public class Movie extends Video {
         return this;
     }
 
-    public double getRating() { return this.rating; }
+    public Double getRating() { return this.rating; }
 
-    public  int getReleaseYear() {return this.releaseYear;}
+    public String[] getGenres() { return this.genres; }
+
+    @Override
+    public Integer getReleaseYear() {return this.releaseYear;}
 
 }

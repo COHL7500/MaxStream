@@ -52,7 +52,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="profile1Button" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchToMainScene" prefHeight="33.0" prefWidth="22.0" style="-fx-background-color: #1d2020;">
+            <Button fx:id="profile1Button" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchToMainSceneFromProfile" prefHeight="33.0" prefWidth="22.0" style="-fx-background-color: #1d2020;">
                <GridPane.margin>
                   <Insets left="75.0" />
                </GridPane.margin>
@@ -60,7 +60,7 @@
                   <Circle fx:id="profileAvatar1" fill="#ffd1ff" opacity="0.0" radius="60.0" stroke="BLACK" strokeType="INSIDE" />
                </graphic>
             </Button>
-            <Button fx:id="profile2Button" mnemonicParsing="false" onAction="#switchToMainScene" style="-fx-background-color: #1d2020;" GridPane.columnIndex="1">
+            <Button fx:id="profile2Button" mnemonicParsing="false" onAction="#switchToMainSceneFromProfile" style="-fx-background-color: #1d2020;" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets left="75.0" />
                </GridPane.margin>
@@ -68,7 +68,7 @@
                   <Circle fx:id="profileAvatar2" fill="#c5cbcb" opacity="0.0" radius="60.0" stroke="BLACK" strokeType="INSIDE" style="-fx-background-color: #1d2020;" />
                </graphic>
             </Button>
-            <Button fx:id="profile3Button" mnemonicParsing="false" onAction="#switchToMainScene" style="-fx-background-color: #1d2020;" GridPane.columnIndex="2">
+            <Button fx:id="profile3Button" mnemonicParsing="false" onAction="#switchToMainSceneFromProfile" style="-fx-background-color: #1d2020;" GridPane.columnIndex="2">
                <GridPane.margin>
                   <Insets left="75.0" />
                </GridPane.margin>

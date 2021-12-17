@@ -17,10 +17,6 @@ import java.util.List;
 
 public class ImageLoader {
 
-    public static void main(String[] args) throws IOException {
-        VideoDB.buildSeriesList();
-    }
-
     public static Image imageFinder(Video video) throws IOException
     {
         String folder = video.getVideoType() instanceof Series ? "series" : "movies";

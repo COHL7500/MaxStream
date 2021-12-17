@@ -14,7 +14,9 @@ public abstract class Video {
 
     public abstract String getTitle();
 
-    public abstract double getRating();
+    public abstract Double getRating();
+
+    public abstract Integer getReleaseYear();
 
 
 

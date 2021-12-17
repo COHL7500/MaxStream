@@ -8,15 +8,17 @@ import java.util.Arrays;
 public class Series extends Video {
 
     private String title;
-    private double rating;
-    private String runYear;
+    private Double rating;
+    private int yearStart;
+    private int yearEnd;
     private String[] seasons;
     private String[] genres;
 
-    public Series(String title, String runYear, String[] genres, String[] seasons, double rating) {
+    public Series(String title, int yearStart, int yearEnd, String[] genres, String[] seasons, double rating) {
         this.title = title;
         this.rating = rating;
-        this.runYear = runYear;
+        this.yearStart = yearStart;
+        this.yearEnd = yearEnd;
         this.seasons = seasons;
         this.genres = genres;
     }
@@ -25,7 +27,7 @@ public class Series extends Video {
         return this.title;
     }
 
-    public double getRating() {
+    public Double getRating() {
         return this.rating;
     }
 
@@ -33,6 +35,13 @@ public class Series extends Video {
     {
         return this.seasons;
     }
+
+    public String[] getGenres() { return this.genres; }
+
+    @Override
+    public Integer getReleaseYear() { return this.yearStart; }
+
+    public Integer getYearEnd() { return this.yearEnd; }
 
     public Video getVideoType()
     {
