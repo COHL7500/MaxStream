@@ -5,12 +5,17 @@ import javafx.scene.paint.Color;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+// Definerer hvad objektet "profil" er.
+
 class Profile {
 
     private int age;
     private Color color;
     private String name;
     //private ArrayList<Video> myList = new ArrayList<>();
+
+    // Her gemmes den bestemte profils liste.
+    // Den gemmer objektet af videoen + knappens ID.
     private HashMap<Video, Integer> myList = new HashMap<>();
 
     //TODO:
@@ -29,8 +34,12 @@ class Profile {
 
     void addToMyList(Video video, Integer integer) {myList.put(video, integer);}
 
-    int getAge() {return age;}
     Color getColor() {return color;}
+
+    // De nedenstående metoder er overflødige, da vi ikke nåede at bruge dem.
+    // Formålet var med getAge, at man kunne filtrere efter brugerens alder.
+    // getName kunne bruges på profilsiden, hvor man vil kunne se navnet af brugeren.
+    int getAge() {return age;}
     String getName() {return name;}
 
 }

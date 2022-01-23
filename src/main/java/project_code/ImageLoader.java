@@ -15,6 +15,12 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
+
+// Tilegnet for at finde billedet af en film eller serie.
+
+// I starten havde Abstrakt-klassen 'Video' vores imgPath
+// ... Dette fungerede dette ikke optimalt, siden vi skulle bruge en funktion til at finde den tilhørende sti.
+
 public class ImageLoader {
 
     public static Image imageFinder(Video video) throws IOException

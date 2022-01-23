@@ -1,0 +1,11 @@
+TODO:
+- Fjerne unødvendige checked exceptions
+- Have en enkel, universel metode i SceneController; kræver ikke mere end en metode (kodeduplikering).
+- Rode op i ubrugte biblioteker.
+- Færdiggøre genrefiltrering
+- Implementere søgning.
+- Slette prints brugt til debugging + tests.
+- Tilføje en rigtig unit test.
+- Refaktorisering; rydde op i kode.
+- Fjern kodeduplikering, f.eks. bruges SceneController ikke i addProfile.
+- Fjern "MaxStreamButton"-metoden i SceneController.

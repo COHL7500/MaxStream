@@ -14,6 +14,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+// Controlleren for siden "AddProfile"-siden.
+// Denne side opretter brugeren og gemmer oplysningerne indtastet i VideoDB.
+
 public class addProfileController extends SceneController {
 
     Stage stage;
@@ -34,6 +37,8 @@ public class addProfileController extends SceneController {
     @FXML
     private Text warnText;
 
+    // Ja.. denne her burde slettes. Intet initialiseres.
+    // Når noget indtastes i denne metode, bliver indholdende kode kørt som det første.
     @FXML
     protected void initialize()
     {
@@ -45,34 +50,46 @@ public class addProfileController extends SceneController {
         AVATAR.setFill(avatarColorPicker.getValue());
     }
 
+    // Opretter profilen. Sørger for alle oplysninger opfylder minimumskravene.
     @FXML
     protected void createAccount(ActionEvent event) throws IOException {
 
         if(ProfileDB.getProfileListLength() == 3)
         {
+
             warnText.setText("Cannot create more users!");
 
             warnText.setOpacity(1.0);
+
         }
         else if (nameField.getText().equals("") || ageField.getText().equals("")) {
+
             warnText.setText("Field cannot be empty!");
 
             warnText.setOpacity(1.0);
+
         } else if (nameField.getLength() > 10) {
+
             warnText.setText("Name is too long!");
 
             warnText.setOpacity(1.0);
+
         } else if (ageField.getLength() > 4) {
+
             warnText.setText("Age is too high!");
 
             warnText.setOpacity(1.0);
+
         } else if (nameField.getText().matches(".*[0-9].*") || nameField.getText().matches(".*[^a-z0-9].*")) {
+
             nameField.clear();
 
             warnText.setText("Name must only contain letters!");
 
             warnText.setOpacity(1.0);
+
         } else if (!ageField.getText().matches(".*[0-9].*")) {
+
             ageField.clear();
 
             warnText.setText("Age cannot contain letters!");
@@ -80,6 +97,8 @@ public class addProfileController extends SceneController {
             warnText.setOpacity(1.0);
 
         } else {
+
+            // Når alle minimumskravene er opfyldt, oprettes profilen og gemmes til ProfileDB.
 
             Profile profile = new Profile(Integer.parseInt(ageField.getText()),
                     avatarColorPicker.getValue(),
@@ -89,12 +108,13 @@ public class addProfileController extends SceneController {
 
             System.out.println(ProfileDB.getProfileListLength());
 
+            // Alt koden nedenstående burde udskiftes med SceneControllers funktion "switchToProfile".
+            // Koden er kodeduplikering er forfærdelig praksis.
             Parent root = FXMLLoader.load(getClass().getResource("profile-view.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-
 
         }
     }

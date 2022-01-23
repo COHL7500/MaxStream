@@ -1,5 +1,7 @@
 package project_code;
 
+// Definerer hvad et film-objekt er.
+
 public class Movie extends Video {
 
     private String title;

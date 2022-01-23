@@ -10,6 +10,9 @@ import javafx.scene.text.Text;
 import java.io.IOException;
 import java.util.Arrays;
 
+// Kontrollerer siden for detaljerne for en serie.
+// j.f. showMovieController; gør det samme.
+
 public class showSeriesController extends SceneController {
 
     @FXML

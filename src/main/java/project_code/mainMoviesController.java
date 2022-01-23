@@ -20,6 +20,8 @@ import java.util.Objects;
 
 public class mainMoviesController extends MainController {
 
+    // Siden for film. Fungerer nøjagtig som Series-siden.
+
     @FXML
     private TilePane mainTilePane;
 
@@ -64,17 +66,6 @@ public class mainMoviesController extends MainController {
                 mainTilePane.getChildren().remove(genreIncludedMap.get(key));
                 genreExcludedMap.put(key, genreIncludedMap.get(key));
             }
-
-          
-
-
-   
-   
-   
-   
-
-
-
         }
     }
 }

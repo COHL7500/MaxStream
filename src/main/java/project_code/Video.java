@@ -7,9 +7,14 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+// Vores overordnede abstrakt-klasse for film/serie.
+// Både film/serie nedarver fra Video, eftersom de begge har nogle værdier til fælles.
+// Takket være denne struktur, opfylder man Liskovs substitutionsprincip; serier og film kan let udskiftes.
+
+// Jeg forsøgte at implementere den non-primitive datatype Image, da de begge har dette til fælles. Fungererede ikke så godt.
+
 public abstract class Video {
-    // Skal være mere konkret end "Object".
-    // Skal returnere en videotype, f.eks. serie/profil
+
     public abstract Video getVideoType();
 
     public abstract String getTitle();

@@ -11,6 +11,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
+    // Tilegnet skiften mellem de forskellige scener tilgængelige i programmet.
+    // Næsten alle controllere nedarver fra denne klasse, således har de let adgang til alle scener.
 
     // MAJOR FUCK UP: Alt for meget kodeduplikering:
     // En funktion kunne påkræve navnet på filen og ActionEvent event. Ved ikke, hvad jeg tænkte på.
@@ -68,6 +70,10 @@ public class SceneController {
         stage.show();
     }
 
+
+    // ?? Det har var forfærdelig dumt af mit vedkommende:
+    // switchProfile-metoden gør alle det NØJAGTIGT samme.
+    // Dårlig praksis.
     @FXML
     protected void MaxStreamButton(ActionEvent event) throws IOException
     {

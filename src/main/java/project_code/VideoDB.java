@@ -7,6 +7,13 @@ import java.io.*;
 import java.net.URISyntaxException;
 import java.util.*;
 
+// En databasemodel for alle videoer: Liste for de respektive film, serier, genrer osv.
+//TODO:
+// Arrays frem for ArrayListe (overflødigt, siden de har en fast længde alligevel).
+// Et mere optimalt system til at gemme den nuværende video.
+// Færre lister
+// Mere optimal konstruering/opsætning af listerne.
+
 public class VideoDB extends ImageLoader {
 
     private static ArrayList<Movie> movieList = new ArrayList<>();
@@ -15,6 +22,8 @@ public class VideoDB extends ImageLoader {
     private static ArrayList<String> genreList = new ArrayList<>();
 
     public static int currentlyShownVideo = 0;
+
+    // Getter-metoder til at få fat på listerne.
 
     public static ArrayList<String> getGenreList()
     {
@@ -35,6 +44,12 @@ public class VideoDB extends ImageLoader {
     {
         return videoList;
     }
+
+    // Build-metoder for at bygge listerne. Garanteret en bedre løsning.
+    // ... De kan smide en checked exception, altså IOException, siden de bruger "scanner".
+    /// ... Hvis man ændrer txt-filerne med data, som ikke stemmer overens, vil den kaste en IOException.
+    // ... Denne exception kunne godt propageres og angive info til kalderen. Dette nåede vi ikke at implementere.
+
 
     public static ArrayList<Movie> buildMovieList() throws IOException {
 

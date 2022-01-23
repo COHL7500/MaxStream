@@ -12,6 +12,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+// Kontrollerer profilsiden.
+
 public class ProfileController extends SceneController {
 
     Stage stage;
@@ -40,6 +42,10 @@ public class ProfileController extends SceneController {
     private void initialize()
     {
 
+        // Dette var en midlertidig løsning til at vise tilgængelige profiler på profilsiden.
+        // En smartere løsning er at først bygge profilknappen, når den gældende profil er oprettet...
+        // ... I stedet valgte vi at sætte opaciteten til 0, for at skjule knappen, og 1 når tilgængelig.
+
         if(ProfileDB.getProfileListLength() > 0)
         {
             profileAvatar1.setFill(ProfileDB.getProfile(0).getColor());
@@ -58,6 +64,9 @@ public class ProfileController extends SceneController {
             }
         }
     }
+
+    // Undersøger, hvilken knap man klikker på.
+    // Den nuværende profil gemmes i profileDB. Hvis man ændrer profilen, gemmes dette.
 
     @FXML
     protected void switchToMainSceneFromProfile(ActionEvent event) throws IOException

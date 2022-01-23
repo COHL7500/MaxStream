@@ -5,6 +5,8 @@ import javafx.scene.image.Image;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+// Definerer hvad et serie-objekt indeholder.
+
 public class Series extends Video {
 
     private String title;

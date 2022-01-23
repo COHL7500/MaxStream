@@ -7,6 +7,9 @@ import javafx.scene.shape.Circle;
 
 import java.io.IOException;
 
+// Controlleren for siden "Min Liste".
+// Controlleren genererer knapper ud fra filmene/serierne, man har tilføjet til sin liste.
+
 public class myListController extends MainController {
 
     @FXML

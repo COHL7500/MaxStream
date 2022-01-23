@@ -10,6 +10,8 @@ import javafx.scene.text.Text;
 import java.io.IOException;
 import java.util.Arrays;
 
+// Kontrollerer siden for en films detaljer (når man klipper på en knap, som tilhører en film)
+
 public class showMovieController extends SceneController {
 
     @FXML
@@ -30,8 +32,12 @@ public class showMovieController extends SceneController {
     @FXML
     private Button addMyListButton;
 
+
+    // Ved initialisering indlæses alle oplysninger for den gældende film/serie.
+
     @FXML
     public void initialize() throws IOException {
+
         Image image = ImageLoader.imageFinder(VideoDB.getMovieList().get(VideoDB.currentlyShownVideo));
         coverImageView.setImage(image);
 
@@ -46,6 +52,8 @@ public class showMovieController extends SceneController {
         inputRating.setText(VideoDB.getMovieList().get(VideoDB.currentlyShownVideo).getRating().toString());
     }
 
+    // Når du klikker på "add to list"-knappen, bliver filmen/serien gemt til ens liste.
+    // Der er intet tilfælde af Input/Ouput her, så spild at nævne en IOException.
     @FXML
     public void addToMyList() throws IOException {
 

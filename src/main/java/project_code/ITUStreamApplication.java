@@ -7,6 +7,9 @@ import javafx.stage.Stage;
 
 
 // Initialiseringen af applikationen: Sørger for programmet starter.
+// Fun fact: Programmet har kun én enkel stage; primaryStage.
+// Vi skifter mellem scener, således har vi kun brug for en stage.
+// Stage = vinduet, Scene = indholdet/elementerne inde i vinduet.
 
 public class ITUStreamApplication extends Application {
 
