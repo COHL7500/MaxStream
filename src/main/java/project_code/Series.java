@@ -8,43 +8,43 @@ import java.util.Arrays;
 public class Series extends Video {
 
     private String title;
-    private Image coverImage;
-    private double rating;
-    private int releaseYearStart;
-    private int releaseYearEnd;
+    private Double rating;
+    private int yearStart;
+    private int yearEnd;
     private String[] seasons;
     private String[] genres;
 
-    public Series(String title, int relYearStart, int relYearEnd, String[] genres, String[] seasons, String imagePath, double rating)
-    {
+    public Series(String title, int yearStart, int yearEnd, String[] genres, String[] seasons, double rating) {
         this.title = title;
-        this.coverImage = new Image("file:" + imagePath);
         this.rating = rating;
-        this.releaseYearStart = relYearStart;
-        this.releaseYearEnd = relYearEnd;
-        this.seasons =
+        this.yearStart = yearStart;
+        this.yearEnd = yearEnd;
+        this.seasons = seasons;
         this.genres = genres;
     }
+
+    public String getTitle() {
+        return this.title;
+    }
+
+    public Double getRating() {
+        return this.rating;
+    }
+
+    public String[] getSeasons()
+    {
+        return this.seasons;
+    }
+
+    public String[] getGenres() { return this.genres; }
+
+    @Override
+    public Integer getReleaseYear() { return this.yearStart; }
+
+    public Integer getYearEnd() { return this.yearEnd; }
 
     public Video getVideoType()
     {
         return this;
-    }
-
-    public Image getImage()
-    {
-        return this.coverImage;
-    }
-
-    @Override
-    public String getInfo() // Egnet til testing
-    {
-        String s = ("Title: " + title + "\n" +
-                "Release year: " + releaseYear + "\n" +
-                "Final year: " + releaseYearEnd + "\n" +
-                "Genres: " + Arrays.toString(genres) + "\n" +
-                "IMDB Rating: " + rating + "\n" + "---------------");
-
-        return s;
     }
 }

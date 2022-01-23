@@ -19,7 +19,7 @@ The Walking Dead; 2010- ; Drama, Horror, Sci-fi; 8,4; 1-6, 2-13, 3-16, 4-16, 5-1
 The Wire; 2001-2008; Crime, Drama, Thriller; 9,3; 1-13, 2-12, 3-12, 4-13, 5-10; 
 Welt Am Draht; 1973 ; Crime, Mystery, Sci-fi; 7,9; 1-2;
 House Of Cards; 2013-2018; Drama; 8,9; 1-13, 2-13, 3-13, 4-13, 5-13, 6-8;
-Fargo; 2014- ; Crime, Drama, Thriller; 9,0; 1-10; 2-10; 3-10;
+Fargo; 2014- ; Crime, Drama, Thriller; 9,0; 1-10, 2-10, 3-10;
 Angel; 1999-2004; Action, Drama, Fantasy; 8,0; 1-22, 2-22, 3-22, 4-22, 5-22; 
 V; 1984-1985; Action, Adventure, Sci-fi; 7,3; 1-13;
 Jessica Jones; 2015- ; Action, Crime, Drama; 8,1; 1-13, 2-13;
@@ -38,7 +38,7 @@ Alfred Hitchcock Presents; 1955-1962; Crime, Drama, Mystery; 8,6; 1-39, 2-39, 3-
 I Love Lucy; 1951-1957; Comedy, Family; 8,3; 1-35, 2-31, 3-31, 4-30, 5-26, 6-27;
 24; 2001-2010; Action, Crime, Drama; 8,4; 1-24, 2-24, 3-24, 4-24, 5-24, 6-24,7-24, 8-24;
 The Americans; 2013-2018; Crime, Drama, Mystery; 8,4; 1-13, 2-13, 3-13, 4-13, 5-13, 6-10;
-Girls; 2012-2017; Comedy, Drama; 7,3; 1-10, 2-10, 3-12, 4-10, 5-10; 6-10;
+Girls; 2012-2017; Comedy, Drama; 7,3; 1-10, 2-10, 3-12, 4-10, 5-10, 6-10;
 Mad Men; 2007-2015; Drama; 8,6; 1-13, 2-13, 3-13, 4-13, 5-13, 6-13, 7-14;
 Northern Exposure; 1990-1995; Comedy, Drama, Fantasy; 8,3; 1-8, 2-7, 3-23, 4-25, 5-24, 6-23;
 Star Trek; 1966-1969; Action, Adventure, Sci-fi; 8,3; 1-29, 2-26, 3-24;

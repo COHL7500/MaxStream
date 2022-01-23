@@ -11,6 +11,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="grpro15_proj" target="16" />
+      <module name="jfx" target="16" />
     </bytecodeTargetLevel>
   </component>
 </project>

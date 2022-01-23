@@ -7,19 +7,12 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ColorPicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import project_code.Profile;
 
 import java.io.IOException;
 
-public class ProfileController {
+public class ProfileController extends SceneController {
 
     Stage stage;
 
@@ -67,17 +60,7 @@ public class ProfileController {
     }
 
     @FXML
-    protected void switchToAddProfileScene(ActionEvent event) throws IOException
-    {
-        Parent root = FXMLLoader.load(getClass().getResource("addProfile-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    protected void switchToMainScene(ActionEvent event) throws IOException
+    protected void switchToMainSceneFromProfile(ActionEvent event) throws IOException
     {
         if(profile1Button == event.getTarget())
         {
@@ -92,10 +75,18 @@ public class ProfileController {
             ProfileDB.currProfile = ProfileDB.getProfile(2);
         }
 
+        // Kunne bare have brugt SceneController(event). Nåede ikke at rette dette.
+
         Parent root = FXMLLoader.load(getClass().getResource("main-view.fxml"));
+
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+
+
+        // switchToMainScene(event, "main-view.fxml");
     }
+
+
 }

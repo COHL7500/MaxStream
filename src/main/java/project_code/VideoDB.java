@@ -1,24 +1,43 @@
 package project_code;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Scanner;
+import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+
+import java.io.*;
+import java.net.URISyntaxException;
+import java.util.*;
 
 public class VideoDB extends ImageLoader {
 
-    String movieInfoPath = "src/main/resources/film.txt";
-    String seriesInfoPath = "src/main/resources/serier.txt";
-
     private static ArrayList<Movie> movieList = new ArrayList<>();
     private static ArrayList<Series> seriesList = new ArrayList<>();
+    private static ArrayList<Video> videoList = new ArrayList<>();
+    private static ArrayList<String> genreList = new ArrayList<>();
 
-    public static void main(String[] args) throws IOException {
+    public static int currentlyShownVideo = 0;
+
+    public static ArrayList<String> getGenreList()
+    {
+        return genreList;
     }
 
-    public static void initMovieList() throws IOException {
+    public static ArrayList<Movie> getMovieList()
+    {
+        return movieList;
+    }
 
-        int loopCount = 0;
+    public static ArrayList<Series> getSeriesList()
+    {
+        return seriesList;
+    }
+
+    public static ArrayList<Video> getVideoList()
+    {
+        return videoList;
+    }
+
+    public static ArrayList<Movie> buildMovieList() throws IOException {
+
         File path = new File("src/main/resources/film.txt");
         Scanner scanner = new Scanner(path);
         scanner.useDelimiter("\\s*;\\s*");
@@ -30,120 +49,81 @@ public class VideoDB extends ImageLoader {
             String[] genres = scanner.next().split(",\\s*");
             double rating = scanner.nextDouble();
 
-            Movie m = new Movie(title, year, genres, videoCoverList(seriesCoverPath).get(loopCount).toString(), rating);
+            Movie m = new Movie(title, year, genres, rating);
 
             movieList.add(m);
-            loopCount++;
         }
+
+        return movieList;
     }
 
-    //TODO:
-    // Fiks initSeriesList() således den udskriver alle oplysninger ordentligt
-
-    public static void initSeriesList() throws IOException
+    public static ArrayList<Series> buildSeriesList() throws IOException
     {
-        int loopCount = 0;
+
         File path = new File("src/main/resources/serier.txt");
         Scanner scanner = new Scanner(path);
         scanner.useDelimiter("\\s*;\\s*");
 
-        while(scanner.hasNext())
-        {
+        while (scanner.hasNext()) {
             String title = scanner.next();
-            int year = Integer.parseInt(scanner.next());
+            String[] year = scanner.next().split("-");
+
+            int yearStart =  Integer.parseInt(year[0]);
+            int yearEnd = 0;
+
+            if (year.length > 1) yearEnd = Integer.parseInt(year[1]);
+
+
             String[] genres = scanner.next().split(",\\s*");
             double rating = scanner.nextDouble();
+            String[] seasons = scanner.next().split(",\\s*");
 
-            Movie m = new Movie(title, year, genres, videoCoverList(seriesCoverPath).get(loopCount).toString(), rating);
+            Series s = new Series(title, yearStart, yearEnd, genres, seasons, rating);
 
-            movieList.add(m);
-            loopCount++;
+            seriesList.add(s);
         }
+
+        return seriesList;
 
     }
 
-    /*
-    public static void printMovieList() throws FileNotFoundException
+    public static void buildGenreList()
     {
-        ArrayList<Video> movieList = listOfMovies();
-
-        for(Video v : listOfMovies())
-        {
-            System.out.println(v.getInfo());
-        }
+        // Film-exclusives
+        genreList.add("Film-noir");
+        genreList.add("Musical");
+        genreList.add("Music");
+        // Alle tilfælles
+        genreList.add("Crime");
+        genreList.add("Drama");
+        genreList.add("History");
+        genreList.add("Romance");
+        genreList.add("Thriller");
+        genreList.add("Adventure");
+        genreList.add("Comedy");
+        genreList.add("War");
+        genreList.add("Action");
+        genreList.add("Sport");
+        genreList.add("Sci-fi");
+        genreList.add("Western");
+        genreList.add("Biography");
+        genreList.add("Mystery");
+        genreList.add("Fantasy");
+        genreList.add("Horror");
+        // Serier-exclusives
+        genreList.add("Animation");
+        genreList.add("Documentary");
+        genreList.add("Family");
+        genreList.add("Talk show");
     }
 
-    final static String filePath = "src/main/resources/film.txt";
+    public static ArrayList<Video> buildVideoList()
+    {
+        videoList.addAll(getMovieList());
+        videoList.addAll(getSeriesList());
 
-    final static Path path = Paths.get("film.txt");
-
-    public static ArrayList<Video> listOfMovies() throws FileNotFoundException {
-        ArrayList<Video> movieList = new ArrayList<>();
-
-        BufferedReader br = null;
-        try {
-            FileReader file = new FileReader(filePath);
-
-            br = new BufferedReader(file);
-
-            String line = br.readLine();
-
-            while (line != null)
-            {
-                String temp = line.replaceAll(";","_");
-                String[] parts = temp.split("_");
-
-                String title = parts[0].trim();
-
-                String year = parts[1].trim();
-                int i = Integer.parseInt(year);
-
-                String genres = parts[2].trim();
-                String[] genre = genres.split(",");
-
-                String rating = parts[3].trim();
-                rating = rating.replace(",",".");
-                double d = Double.parseDouble(rating);
-
-                ImageLoader imageLoader = new ImageLoader();
-
-                String posterPath = imageLoader.test(title + ".jpg");
-
-                if (!title.equals("") && !year.equals("") && !genres.equals("") && !rating.equals("")) {
-                    assert posterPath != null;
-
-                    if (!posterPath.equals("")) {
-                        Movie m = new Movie(title, i, genre, posterPath, d);
-
-                        movieList.add(m);
-                    }
-                }
-            }
-
-        } catch (FileNotFoundException e) {
-            System.out.println(e.getMessage());
-        } catch (IOException e) {
-            System.out.print(e.getMessage());
-        } catch (NullPointerException e) {
-            e.getMessage();
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        } finally {
-            if (br != null) {
-                try
-                {
-                    br.close();
-                } catch (Exception e)
-                {
-                    System.out.println("Something went wrong");
-                }
-            }
-        }
-        return movieList;
+        return videoList;
     }
-
-
-     */
 }
 
 
