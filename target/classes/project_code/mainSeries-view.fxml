@@ -46,7 +46,7 @@
                               <Font size="15.0" />
                            </font>
                         </Text>
-                        <ComboBox layoutX="420.0" layoutY="388.0" prefHeight="32.0" prefWidth="200.0" promptText="GENRE" style="-fx-background-color: #C2C2C2;" visibleRowCount="20" />
+                        <ComboBox fx:id="genreFilter" onAction="#onGenreChange" layoutX="420.0" layoutY="388.0" prefHeight="32.0" prefWidth="200.0" promptText="GENRE" style="-fx-background-color: #C2C2C2;" visibleRowCount="20" />
                         <Text boundsType="VISUAL" fill="WHITE" layoutX="27.0" layoutY="414.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ALL SERIES... OR CHOOSE">
                            <font>
                               <Font name="Shree Devanagari 714" size="30.0" />

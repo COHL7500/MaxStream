@@ -54,7 +54,7 @@
          </graphic>
       </Button>
       <ImageView fx:id="coverImageView" fitHeight="711.0" fitWidth="485.0" layoutX="49.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="addMyListButton" layoutX="572.0" layoutY="529.0" minHeight="-Infinity" mnemonicParsing="false" prefHeight="70.0" style="-fx-background-color: no; -fx-border-width: 5; -fx-border-color: #1d2020; -fx-border-radius: 35;" text="+ MY LIST" textFill="WHITE">
+      <Button fx:id="addMyListButton" onAction="#addToMyList" layoutX="572.0" layoutY="529.0" minHeight="-Infinity" mnemonicParsing="false" prefHeight="70.0" style="-fx-background-color: no; -fx-border-width: 5; -fx-border-color: #1d2020; -fx-border-radius: 35;" text="+ MY LIST" textFill="WHITE">
          <font>
             <Font name="Shree Devanagari 714" size="36.0" />
          </font>

@@ -1,16 +1,30 @@
 package project_code;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.layout.TilePane;
 import javafx.scene.shape.Circle;
 
-public class myListController extends mainMoviesController {
+import java.io.IOException;
+
+public class myListController extends MainController {
 
     @FXML
     private Circle profileAvatar;
 
     @FXML
-    public void initialize()
-    {
+    private TilePane mainTilePane;
+
+    @FXML
+    public void initialize() throws IOException {
         profileAvatar.setFill(ProfileDB.currProfile.getColor());
+
+        for(Video videos : ProfileDB.currProfile.getMyList().keySet())
+        {
+            Button button = buildVideoButton(videos);
+            button.setId(Integer.toString(ProfileDB.currProfile.getMyList().get(videos)));
+            mainTilePane.getChildren().add(button);
+        }
+
     }
 }

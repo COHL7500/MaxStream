@@ -20,21 +20,17 @@ public class ImageLoader {
     public static Image imageFinder(Video video) throws IOException
     {
         String folder = video.getVideoType() instanceof Series ? "series" : "movies";
-
         String path = "/images/" + folder + "/" + video.getTitle() + ".jpg";
-
         URL finalPath = ITUStreamApplication.class.getResource(path);
-
         assert finalPath != null;
-
         return new Image(finalPath.toExternalForm());
     }
 
+    // denne bruges aldrig: Var en test
     public static String test(String fileName) throws NullPointerException
     {
         File folder = new File("src/main/resources/images/movies");
         File[] listOfFiles = folder.listFiles();
-
         ArrayList<File> movieList = new ArrayList<>();
 
 

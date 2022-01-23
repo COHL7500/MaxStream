@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
@@ -43,6 +44,14 @@ public class showMovieController extends SceneController {
                 .replace("]", ""));
 
         inputRating.setText(VideoDB.getMovieList().get(VideoDB.currentlyShownVideo).getRating().toString());
+    }
+
+    @FXML
+    public void addToMyList() throws IOException {
+
+        ProfileDB.currProfile.addToMyList(VideoDB.getMovieList().get(VideoDB.currentlyShownVideo),
+                VideoDB.currentlyShownVideo);
+        addMyListButton.setTextFill(Color.GREEN);
     }
 
 

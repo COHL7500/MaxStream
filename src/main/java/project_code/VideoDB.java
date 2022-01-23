@@ -12,26 +12,26 @@ public class VideoDB extends ImageLoader {
     private static ArrayList<Movie> movieList = new ArrayList<>();
     private static ArrayList<Series> seriesList = new ArrayList<>();
     private static ArrayList<Video> videoList = new ArrayList<>();
-    private static HashMap<Video, Button> currButtonList;
+    private static ArrayList<String> genreList = new ArrayList<>();
 
     public static int currentlyShownVideo = 0;
 
-    public static HashMap<Video, Button> getCurrButtonList() {return currButtonList;}
+    public static ArrayList<String> getGenreList()
+    {
+        return genreList;
+    }
 
-    public static void putCurrButtonList(Video video, Button button) {currButtonList.put(video, button);}
-
-
-    public static ArrayList<Movie> getMovieList() throws IOException
+    public static ArrayList<Movie> getMovieList()
     {
         return movieList;
     }
 
-    public static ArrayList<Series> getSeriesList() throws IOException
+    public static ArrayList<Series> getSeriesList()
     {
         return seriesList;
     }
 
-    public static ArrayList<Video> getVideoList() throws IOException
+    public static ArrayList<Video> getVideoList()
     {
         return videoList;
     }
@@ -87,7 +87,37 @@ public class VideoDB extends ImageLoader {
 
     }
 
-    public static ArrayList<Video> buildVideoList() throws IOException
+    public static void buildGenreList()
+    {
+        // Film-exclusives
+        genreList.add("Film-noir");
+        genreList.add("Musical");
+        genreList.add("Music");
+        // Alle tilfælles
+        genreList.add("Crime");
+        genreList.add("Drama");
+        genreList.add("History");
+        genreList.add("Romance");
+        genreList.add("Thriller");
+        genreList.add("Adventure");
+        genreList.add("Comedy");
+        genreList.add("War");
+        genreList.add("Action");
+        genreList.add("Sport");
+        genreList.add("Sci-fi");
+        genreList.add("Western");
+        genreList.add("Biography");
+        genreList.add("Mystery");
+        genreList.add("Fantasy");
+        genreList.add("Horror");
+        // Serier-exclusives
+        genreList.add("Animation");
+        genreList.add("Documentary");
+        genreList.add("Family");
+        genreList.add("Talk show");
+    }
+
+    public static ArrayList<Video> buildVideoList()
     {
         videoList.addAll(getMovieList());
         videoList.addAll(getSeriesList());

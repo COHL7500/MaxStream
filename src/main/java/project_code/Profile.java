@@ -3,13 +3,15 @@ package project_code;
 import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 class Profile {
 
     private int age;
     private Color color;
     private String name;
-    private ArrayList<Video> myList = new ArrayList<>();
+    //private ArrayList<Video> myList = new ArrayList<>();
+    private HashMap<Video, Integer> myList = new HashMap<>();
 
     //TODO:
     // - Read all user data from a file
@@ -23,7 +25,9 @@ class Profile {
         this.name = name;
     }
 
-    ArrayList<Video> getVideoList() {return myList;}
+    HashMap<Video, Integer> getMyList() {return myList;}
+
+    void addToMyList(Video video, Integer integer) {myList.put(video, integer);}
 
     int getAge() {return age;}
     Color getColor() {return color;}

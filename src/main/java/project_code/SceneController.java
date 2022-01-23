@@ -11,6 +11,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
+
+    // MAJOR FUCK UP: Alt for meget kodeduplikering:
+    // En funktion kunne påkræve navnet på filen og ActionEvent event. Ved ikke, hvad jeg tænkte på.
+
 public class SceneController {
 
     Stage stage;
@@ -58,6 +62,16 @@ public class SceneController {
     public void switchToSeriesScene(ActionEvent event) throws IOException
     {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("mainSeries-view.fxml")));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    protected void MaxStreamButton(ActionEvent event) throws IOException
+    {
+        Parent root = FXMLLoader.load(getClass().getResource("profile-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

@@ -2,17 +2,16 @@ package project_code;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import java.io.IOException;
+
+
+// Initialiseringen af applikationen: Sørger for programmet starter.
 
 public class ITUStreamApplication extends Application {
 
-    private Stage primaryStage;
-
     @Override
-    public void start(Stage primaryStage) throws IOException {
+    public void start(Stage primaryStage) {
         try
         {
             FXMLLoader fxmlLoader = new FXMLLoader(ITUStreamApplication.class.getResource("profile-view.fxml"));
@@ -25,19 +24,13 @@ public class ITUStreamApplication extends Application {
             VideoDB.buildMovieList();
             VideoDB.buildSeriesList();
             VideoDB.buildVideoList();
+            VideoDB.buildGenreList();
         }
 
         catch(Exception e)
         {
             e.printStackTrace();
         }
-    }
-
-    public void changeScene(String fxml) throws IOException
-    {
-        Parent pane = FXMLLoader.load(getClass().getResource(fxml));
-        Scene scene = new Scene(pane);
-        primaryStage.setScene(scene);
     }
 
     public static void main(String[] args) {
